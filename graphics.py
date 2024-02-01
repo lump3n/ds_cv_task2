@@ -13,7 +13,7 @@ def graphics_decorator(func):
     def wrapper(*args, **kwargs):
         plt.figure(figsize=(15, 8))
         func(*args, **kwargs)
-        plt.xlabel('Время, часы')
+        plt.xlabel('Время, секунды')
         plt.ylabel('Кол-во сообщений')
         plt.show()
 
@@ -28,13 +28,15 @@ def plot_distribution(x: np.ndarray, y: np.ndarray, suptitle_text: str) -> None:
     ----------
     x : Заначения x
     y : Целевые значения y
+    suptitle_text ; Загаловок графика
     """
     plt.suptitle(suptitle_text)
     plt.scatter(x, y)
 
 
 @graphics_decorator
-def plot_linear_regr_line_with_distr(x_test: np.ndarray, y_test: np.ndarray, y_pred: np.ndarray, suptitle_text: str) -> None:
+def plot_linear_regr_line_with_distr(x_test: np.ndarray, y_test: np.ndarray, y_pred: np.ndarray,
+                                     suptitle_text: str) -> None:
     """
     Функция отрисовки регрессионной линии на фоне распределения данных
     Parameters
@@ -42,6 +44,7 @@ def plot_linear_regr_line_with_distr(x_test: np.ndarray, y_test: np.ndarray, y_p
     x_test : Тестотовые значения
     y_test : Тестотовые целевые значения
     y_pred : Предсказанные целевые значения
+    suptitle_text ; Загаловок графика
     """
     plt.suptitle(suptitle_text)
     plt.scatter(x_test, y_test)
@@ -49,7 +52,7 @@ def plot_linear_regr_line_with_distr(x_test: np.ndarray, y_test: np.ndarray, y_p
 
 
 @graphics_decorator
-def plot_poly_regr_line_with_distr(x_test: np.ndarray, y_test: np.ndarray,sorted_x_test: np.ndarray,
+def plot_poly_regr_line_with_distr(x_test: np.ndarray, y_test: np.ndarray, sorted_x_test: np.ndarray,
                                    y_pred: np.ndarray, suptitle_text: str) -> None:
     """
     Функция отрисовки регрессионной линии на фоне распределения данных
@@ -59,6 +62,7 @@ def plot_poly_regr_line_with_distr(x_test: np.ndarray, y_test: np.ndarray,sorted
     y_test : Тестотовые целевые значения
     sorted_x_test : Отсортированные тестовые значения
     y_pred : Предсказанные целевые значения
+    suptitle_text ; Загаловок графика
     """
     plt.suptitle(suptitle_text)
     plt.scatter(x_test, y_test)

@@ -59,7 +59,7 @@ def split_df_to_train_test_sets(df: pd.DataFrame) -> tuple[np.ndarray, np.ndarra
     return x_train, x_test, y_train, y_test
 
 
-def normalize_feature(df: pd.DataFrame) -> pd.DataFrame:
+def filter_feature(df: pd.DataFrame) -> pd.DataFrame:
     """
     Отсечение 5% данных сверху и снизу
     Parameters
